@@ -12,12 +12,9 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-        />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"/>
       </Head>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </React.Fragment>
   );
 }
