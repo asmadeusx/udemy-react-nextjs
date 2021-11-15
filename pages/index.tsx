@@ -1,10 +1,13 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import Button from '../components/Button/Button';
 import Htag from '../components/Htag/Htag';
 import Paragraph from '../components/Paragraph/Paragraph';
 import Tag from '../components/Tag/Tag';
 
 export default function Home(): JSX.Element {
+  const [counter, setCounter] = useState<number>(0);
+
+
   return (
     <Fragment>
       <Htag tag="h1"> Текст H1 </Htag>
@@ -18,6 +21,9 @@ export default function Home(): JSX.Element {
       <Tag size='s'>Маленький Тэг</Tag>
       <Tag size='m' color='red'>Средний Красный Тэг</Tag>
       <Tag size='m' color='green'>Средний Зеленый Тэг</Tag>
+
+      <Htag tag="h1"> Каунтер : {counter}</Htag>
+      <Button apperance="primary" onClick={() => setCounter(x => x+1)}> Увеличить Каунт </Button>
     </Fragment>
   );
 };
