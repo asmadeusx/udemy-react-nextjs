@@ -29,7 +29,7 @@ export default function Home(): JSX.Element {
       <Htag tag="h1"> Каунтер : {counter}</Htag>
       <Button apperance="primary" onClick={() => setCounter(x => x+1)}> Увеличить Каунт </Button> */}
 
-      <Rating rating={4} />
+      <Rating rating={3} />
 
     </Fragment>
   );
