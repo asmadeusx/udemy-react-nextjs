@@ -4,14 +4,15 @@ import Htag from '../components/Htag/Htag';
 import Paragraph from '../components/Paragraph/Paragraph';
 import Tag from '../components/Tag/Tag';
 import Rating from '../components/Rating/Rating';
+import withLayout from '../layout/Layout';
 
-export default function Home(): JSX.Element {
+function Home(): JSX.Element {
   const [counter, setCounter] = useState<number>(0);
 
   const [rating, setRating] = useState<number>(0);
 
   return (
-    <Fragment>
+    <Layout>
 
       <Htag tag="h1"> Текст H1 </Htag>
       <Htag tag="h2"> Текст H2 </Htag>
@@ -33,6 +34,8 @@ export default function Home(): JSX.Element {
 
       <Rating rating={rating} isEditable={true} setRating={setRating}/>
 
-    </Fragment>
+    </Layout>
   );
 };
+
+export default withLayout(Home);
