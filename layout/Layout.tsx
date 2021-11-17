@@ -7,7 +7,7 @@ import SideBar from './SideBar/SideBar';
 import Footer from './Footer/Footer';
 
 
-function Layout({ children }: LayoutProps): JSX.Element {
+const Layout = ({ children }: LayoutProps): JSX.Element => {
   return (
 	  <Fragment>
 		  <Header />
