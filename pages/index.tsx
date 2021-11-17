@@ -8,10 +8,12 @@ import Rating from '../components/Rating/Rating';
 export default function Home(): JSX.Element {
   const [counter, setCounter] = useState<number>(0);
 
+  const [rating, setRating] = useState<number>(0);
+
   return (
     <Fragment>
 
-      {/* <Htag tag="h1"> Текст H1 </Htag>
+      <Htag tag="h1"> Текст H1 </Htag>
       <Htag tag="h2"> Текст H2 </Htag>
       <Htag tag="h3"> Текст H3 </Htag>
 
@@ -27,9 +29,9 @@ export default function Home(): JSX.Element {
       <Tag size='m' color='green'>Средний Зеленый Тэг</Tag>
 
       <Htag tag="h1"> Каунтер : {counter}</Htag>
-      <Button apperance="primary" onClick={() => setCounter(x => x+1)}> Увеличить Каунт </Button> */}
+      <Button apperance="primary" onClick={() => setCounter(x => x+1)}> Увеличить Каунт </Button>
 
-      <Rating rating={3} />
+      <Rating rating={rating} isEditable={true} setRating={setRating}/>
 
     </Fragment>
   );
