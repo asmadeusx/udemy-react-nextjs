@@ -9,10 +9,13 @@
 		". header header ."
 		". sidebar body ."
 		"footer footer footer footer";
+	gap: 0 30px;
 }
 
 .header {
 	grid-area: header;
+
+	display: none;
 }
 
 .sidebar {
@@ -25,4 +28,22 @@
 
 .footer {
 	grid-area: footer;
+}
+
+@media (max-width: 765px) {
+	.wrapper {
+		grid-template-columns: minmax(320px, 1fr);
+		grid-template-areas:
+			"header"
+			"body"
+			"footer";
+	}
+
+	.sidebar {
+		display: none;
+	}
+
+	.header {
+		display: block;
+	}
 }

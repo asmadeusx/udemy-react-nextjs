@@ -6,9 +6,9 @@ import cn from "classnames";
 
 function Header({ ...props }: HeaderProps): JSX.Element {
   return (
-	  <div { ...props }>
+	  <Header { ...props }>
 		  Header
-	  </div>
+	  </Header>
   );
 }
 

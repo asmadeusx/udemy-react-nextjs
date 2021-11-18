@@ -14,15 +14,6 @@
 			{
 				"allowSingleExtends": true
 			}
-		],
-		"declaration-block-no-redundant-longhand-properties": [
-			true,
-			{
-				"ignoreShorthands": [
-					"grid",
-					"/grid/"
-				]
-			}
 		]
 	},
 	"extends": [
