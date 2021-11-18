@@ -9,16 +9,19 @@ import Footer from './Footer/Footer';
 
 const Layout = ({ children }: LayoutProps): JSX.Element => {
   return (
-	  <Fragment>
-		  <Header />
-		  <div>
-			  <SideBar />
-			  <div>
-				  {children}
-			  </div>
-		  </div>
-		  <Footer />
-	  </Fragment>
+	  <div className={styles.wrapper}>
+
+		<Header className={styles.header}/>
+
+		<SideBar className={styles.sidebar}/>
+
+		<div className={styles.body}>
+			{children}
+		</div>
+		
+		<Footer className={styles.footer}/>
+
+	  </div>
   );
 }
 
