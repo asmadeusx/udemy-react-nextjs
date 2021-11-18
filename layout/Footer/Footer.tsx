@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { FooterProps } from "./Footer.props";
 import styles from "./Footer.module.css";
 import cn from "classnames";
-import date from 'date-fns';
+import { format } from 'date-fns';
 
 
 function Footer({ className, ...props }: FooterProps): JSX.Element {
@@ -12,14 +12,10 @@ function Footer({ className, ...props }: FooterProps): JSX.Element {
 	  	{...props}
 	  >
 		  <div>
-		  	OwlTop © 2020 - {} Все права защищены
+		  	OwlTop © 2020 - {format(new Date, 'yyyy')} Все права защищены
 		  </div>
-		  <div>
-		  	Пользовательское соглашение
-		  </div>
-		  <div>
-			Политика конфиденциальности
-		  </div>
+		  <a href="#" target="_blank">Пользовательское соглашение</a>
+		  <a href="#" target="_blank">Политика конфиденциальности</a>
 	  </footer>
   );
 }
