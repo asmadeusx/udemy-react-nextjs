@@ -9,6 +9,7 @@ import BooksIcon from "./icons/books.svg";
 import ProductsIcon from "./icons/products.svg";
 import { TopLevelCategory } from "../../interfaces/page.interface";
 import Link from "next/link";
+import { useRouter } from 'next/router';
 
 const firstLevelMenu: FirstLevelMenuItem[] = [
   {
@@ -39,6 +40,16 @@ const firstLevelMenu: FirstLevelMenuItem[] = [
 
 function Menu(): JSX.Element {
   const { menu, setMenu, firstCategory } = useContext(AppContext);
+  const router = useRouter();
+
+  function openSecondLevel(secondCategory: string) {
+    setMenu && setMenu(menu.map(m => {
+      if (m._id.secondCategory == secondCategory) {
+        m.isOpened = !m.isOpened;
+      }
+      return m;
+    }))
+  }
 
   function buildFirstLevel() {
     return (
@@ -67,10 +78,13 @@ function Menu(): JSX.Element {
   function buildSecondLevel(menuItem: FirstLevelMenuItem) {
     return (
       <div className={styles.secondBlock}>
-        {menu.map((m) => (
-          <div key={m._id.secondCategory}>
-            <div className={styles.secondLevel}>{m._id.secondCategory}</div>
-
+        {menu.map((m) => {
+          if (m.pages.map(p => p.alias).includes(router.asPath.split('/')[2])) {
+            m.isOpened = true;
+          }
+          return (
+            <div key={m._id.secondCategory}>
+            <div className={styles.secondLevel} onClick={() => openSecondLevel(m._id.secondCategory)}>{m._id.secondCategory}</div>
             <div
               className={cn(styles.secondLevelBlock, {
                 [styles.secondLevelBlockOpened]: m.isOpened,
@@ -79,7 +93,10 @@ function Menu(): JSX.Element {
               {buildThirdLevel(m.pages, menuItem.route)}
             </div>
           </div>
-        ))}
+          )
+          }
+          )
+        }
       </div>
     );
   }
@@ -89,7 +106,7 @@ function Menu(): JSX.Element {
       <Link key={page._id} href={`/${route}/${page.alias}`}>
         <a
           className={cn(styles.thirdLevel, {
-            [styles.thirdLevelActive]: false,
+            [styles.thirdLevelActive]: `/${route}/${page.alias}` == router.asPath,
           })}
         >
           {page.category}
