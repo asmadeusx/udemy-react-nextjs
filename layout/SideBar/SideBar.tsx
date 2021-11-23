@@ -1,13 +1,16 @@
 import React, { Fragment } from "react";
 import { SideBarProps } from "./SideBar.props";
-import styles from "./Layout.module.css";
+import styles from "./Sidebar.module.css";
 import cn from "classnames";
 import Menu from '../Menu/Menu';
+import Logo from '../logo.svg';
 
 
-function SideBar({ ...props }: SideBarProps): JSX.Element {
+function SideBar({ className, ...props }: SideBarProps): JSX.Element {
   return (
-	  <div {...props}>
+	  <div className={cn(className, styles.sideBar)} {...props}>
+		  <Logo className={styles.logo}/>
+		  <div>Поиск</div>
 		  <Menu/>
 	  </div>
   );
