@@ -36,10 +36,6 @@ function Home({ menu }: HomeProps): JSX.Element {
       <Button apperance="primary" onClick={() => setCounter(x => x+1)}> Увеличить Каунт </Button>
 
       <Rating rating={rating} isEditable={true} setRating={setRating}/>
-
-      <ul>
-        { menu.map( m => (<li key={m._id.secondCategory}>{m._id.secondCategory}</li>) ) }
-      </ul>
       
     </Fragment>
   );
