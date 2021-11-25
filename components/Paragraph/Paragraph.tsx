@@ -15,7 +15,7 @@ function Paragraph({ children, size = "m", className, ...props }: ParagraphProps
 		  {...props}
 	>
 		{children} 
-	</p>);
+	</p>)
 }
 
 export default Paragraph;

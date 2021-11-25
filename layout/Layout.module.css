@@ -1,3 +1,4 @@
+/* stylelint-disable declaration-block-no-redundant-longhand-properties */
 .wrapper {
 	display: grid;
 
@@ -10,7 +11,7 @@
 		". sidebar body ."
 		"footer footer footer footer";
 
-	gap: 0 30px;
+	gap: 40px 30px;
 }
 
 .header {
@@ -46,5 +47,9 @@
 
 	.header {
 		display: block;
+	}
+
+	.body {
+		padding: 15px;
 	}
 }
