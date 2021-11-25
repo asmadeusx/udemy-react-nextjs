@@ -4,7 +4,8 @@ import styles from "./TopPageComponent.module.css";
 import cn from "classnames";
 import Htag from '../../components/Htag/Htag';
 import Tag from '../../components/Tag/Tag';
-import Card from '../../components/Card/Card';
+import HhData from '../../components/HhData/HhData';
+import { TopLevelCategory } from '../../interfaces/page.interface';
 
 
 export const TopPageComponent = ({ page, products, firstCategory, ...props }: TopPageComponentProps): JSX.Element => {
@@ -26,13 +27,7 @@ export const TopPageComponent = ({ page, products, firstCategory, ...props }: To
 			  <span>Сортировка</span>
 		  </div>
 
-		  <div className={styles.hh}>
-			  <Card className={styles.hhcount}>
-				  <div className={styles.hhstattitle}>Все Вакансий</div>
-				  <div className={styles.hhstatcount}>{page.hh.count}</div>
-			  </Card>
-
-		  </div>
+		  {firstCategory == TopLevelCategory.Courses && <HhData {...page.hh}/>}
 	  </div>
   )
 }

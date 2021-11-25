@@ -1,7 +1,5 @@
-import { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
+import { HhData } from '../../interfaces/page.interface';
 
-export interface CardProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLParagraphElement> {
-  children: ReactNode;
-  color?: 'white' | 'blue';
-  // Вопросительный знак значит, что параметр необязательный.
+export interface HhDataProps extends HhData {
+
 }
