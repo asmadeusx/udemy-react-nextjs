@@ -2,13 +2,13 @@
 	display: none;
 }
 
-.acitve {
+.active {
 	color: var(--primary);
 
 	font-weight: bold;
 }
 
-.acitve .sorticon {
+.active .sorticon {
 	display: block;
 
 	margin-right: 8px;

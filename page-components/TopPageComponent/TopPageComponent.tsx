@@ -37,7 +37,6 @@ export const TopPageComponent = ({
         <Tag color="red" size="m">
           hh.ru
         </Tag>
-        <span>Сортировка</span>
       </div>
 
       {firstCategory == TopLevelCategory.Courses && page.hh && (
