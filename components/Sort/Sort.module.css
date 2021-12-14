@@ -17,8 +17,10 @@
 .sort {
 	display: inline-block;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: auto auto;
 	gap: 40px;
+
+	cursor: pointer;
 }
 
 .sort span {
@@ -27,4 +29,8 @@
 	gap: 8px;
 
 	align-items: center;
+}
+
+.sort span:not(.active) {
+	grid-template-columns: 1fr;
 }
