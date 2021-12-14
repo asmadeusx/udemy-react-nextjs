@@ -8,6 +8,7 @@ import { withLayout } from '../layout/Layout';
 import { GetStaticProps } from 'next';
 import axios from 'axios';
 import { MenuItem } from '../interfaces/menu.interface';
+import Input from '../components/Input/Input';
 
 function Home({ menu }: HomeProps): JSX.Element {
   const [counter, setCounter] = useState<number>(0);
@@ -37,6 +38,8 @@ function Home({ menu }: HomeProps): JSX.Element {
 
       <Rating rating={rating} isEditable={true} setRating={setRating}/>
       
+      <Input placeholder='тест'/>
+
     </Fragment>
   );
 };
