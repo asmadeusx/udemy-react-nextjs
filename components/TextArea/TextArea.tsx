@@ -6,7 +6,7 @@ import cn from "classnames";
 
 function TextArea({ className, ...props }: TextAreaProps): JSX.Element {
   return (
-	  <input className={cn(className, styles.textarea)} {...props}></input>
+	  <textarea className={cn(className, styles.textarea)} {...props}></textarea>
 	)
 }
 
