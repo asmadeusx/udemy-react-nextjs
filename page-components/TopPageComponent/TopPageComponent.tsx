@@ -10,6 +10,7 @@ import Advantages from "../../components/Advantages/Advantages";
 import Sort from '../../components/Sort/Sort';
 import { SortEnum } from '../../components/Sort/Sort.props';
 import { SortReducer } from './sort.reducer';
+import Product from '../../components/Product/Product';
 
 export const TopPageComponent = ({ page, products, firstCategory, ...props }: TopPageComponentProps): JSX.Element => {
   const [{products: sortedProducts, sort }, dispathSort] = useReducer(SortReducer, { products, sort: SortEnum.Rating });
@@ -31,7 +32,7 @@ export const TopPageComponent = ({ page, products, firstCategory, ...props }: To
       </div>
 
       <div>
-        {sortedProducts && sortedProducts.map((p) => <div key={p._id}>{p.title}</div>)}
+        {sortedProducts && sortedProducts.map((p) => <Product key={p._id} product={p}></Product>)}
       </div>
 
       <div className={styles.hhtitle}>
