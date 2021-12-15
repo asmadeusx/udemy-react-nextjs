@@ -35,6 +35,7 @@ function Home({ menu }: HomeProps): JSX.Element {
       <Tag size='m' color='green'>Средний Зеленый Тэг</Tag>
 
       <Htag tag="h1"> Каунтер : {counter}</Htag>
+      
       <Button apperance="primary" onClick={() => setCounter(x => x+1)}> Увеличить Каунт </Button>
 
       <Rating rating={rating} isEditable={true} setRating={setRating}/>

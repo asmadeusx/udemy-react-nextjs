@@ -1,18 +1,37 @@
-.p {
-	margin: 0;
+/* stylelint-disable max-line-length */
+.product {
+	display: grid;
+
+	grid-template-columns: [start] 70px [logoend] 30px [titlestart] calc(50% - 100px) [middle] 1fr [pricestart] auto [priceend] 40px [creditstart] auto [creditend] 40px [ratingstart] auto [end];
+
+	margin-bottom: 30px;
 }
 
-.s {
-	font-size: 14px;
-	line-height: 24px;
+.logo {
+	grid-column: start / logoend;
+	grid-row: 1 / span 2;
 }
 
-.m {
-	font-size: 16px;
-	line-height: 24px;
+.title,
+.tags {
+	grid-column: titlestart / middle;
 }
 
-.l {
-	font-size: 18px;
-	line-height: 29px;
+.price,
+.pricetitle {
+	grid-column: pricestart / priceend;
+}
+
+.credit,
+.credittitle {
+	grid-column: creditstart / creditend;
+}
+
+.rating,
+.ratingtitle {
+	grid-column: ratingstart / end;
+}
+
+.hr {
+	grid-column: start / end;
 }
