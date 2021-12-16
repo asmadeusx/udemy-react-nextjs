@@ -128,3 +128,26 @@
 
 	border-left: 2px solid var(--red);
 }
+
+.characteristics {
+	display: grid;
+
+	padding-right: 60px;
+
+	grid-template-columns: auto 1fr auto;
+
+	gap: 10px;
+
+	font-size: 16px;
+	line-height: 32px;
+}
+
+.characteristicsname {
+	font-weight: bold;
+}
+
+.characteristicsdots {
+	margin-bottom: 5px;
+
+	border-bottom: 1px dashed var(--grey-light);
+}

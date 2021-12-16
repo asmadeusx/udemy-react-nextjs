@@ -7,7 +7,7 @@ import Card from '../Card/Card';
 import Rating from '../Rating/Rating';
 import Tag from '../Tag/Tag';
 import Button from '../Button/Button';
-import { priceRu } from '../../helpers/helpers';
+import { declOfNum, priceRu } from '../../helpers/helpers';
 import Divider from '../Divider/Divider';
 
 
@@ -27,10 +27,18 @@ function Product({ product, children, ...props }: ProductProps): JSX.Element {
 		  <div className={styles.tags}>{product.categories.map( (c) => <Tag className={styles.category} key={c} color='ghost'>{c}</Tag> )}</div>
 		  <div className={styles.pricetitle}>цена</div>
 		  <div className={styles.credittitle}>в кредит</div>
-		  <div className={styles.ratingtitle}>{product.reviewCount} отзывов</div>
+		  <div className={styles.ratingtitle}>{product.reviewCount} {declOfNum(product.reviewCount, ['отзыв', 'отзыва', 'отзывов'])}</div>
 		  <Divider className={styles.hr}/>
 		  <div className={styles.description}>{product.description}</div>
-		  <div className={styles.feature}>блок фичи</div>
+		  <div className={styles.feature}>
+			  {product.characteristics.map( (c) => (
+				  <div className={styles.characteristics} key={c.name}>
+					  <span className={styles.characteristicsname}>{c.name}</span>
+					  <span className={styles.characteristicsdots}></span>
+					  <span className={styles.characteristicsvalue}>{c.value}</span>
+				  </div>
+			  ))}
+		  </div>
 		  <div className={styles.advblock}>
 		  	  {product.advantages && <div className={styles.advantages}>
 				  <div className={styles.advtitle}>Преимущества</div>
