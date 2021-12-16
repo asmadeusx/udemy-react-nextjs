@@ -4,7 +4,7 @@ import styles from "./Tag.module.css";
 import cn from "classnames";
 
 
-function Tag({ size, children, color = 'ghost', href, className, ...props }: TagProps): JSX.Element {
+function Tag({ size = 's', children, color = 'ghost', href, className, ...props }: TagProps): JSX.Element {
   return (
 	<div
 		className={cn(styles.tag, className, {

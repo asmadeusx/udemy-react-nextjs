@@ -45,4 +45,86 @@
 
 .advblock {
 	grid-column: middle / end;
+
+	font-size: 16px;
+	line-height: 22px;
+}
+
+.logo img {
+	border-radius: 5px;
+}
+
+.title {
+	align-self: flex-end;
+
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 27px;
+}
+
+.category {
+	margin-top: 7px;
+}
+
+.price,
+.credit {
+	align-self: flex-end;
+
+	font-size: 20px;
+	line-height: 27px;
+}
+
+.rating {
+	align-self: flex-end;
+}
+
+.description {
+	margin-bottom: 15px;
+
+	font-size: 16px;
+	line-height: 24px;
+}
+
+.pricetitle,
+.credittitle,
+.ratingtitle {
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 19px;
+}
+
+.month {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+.oldprice {
+	margin-left: 5px;
+}
+
+.reviewbutton {
+	margin-left: 20px;
+}
+
+.advtitle,
+.disadvtitle {
+	margin-bottom: 5px;
+
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 22px;
+}
+
+.advantages {
+	margin-bottom: 20px;
+
+	padding-left: 15px;
+
+	border-left: 2px solid var(--green);
+}
+
+.disadvantages {
+	padding-left: 15px;
+
+	border-left: 2px solid var(--red);
 }
