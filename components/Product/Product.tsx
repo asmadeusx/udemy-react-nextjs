@@ -57,7 +57,7 @@ function Product({ product, children, ...props }: ProductProps): JSX.Element {
 				  <div>{product.disadvantages}</div>
 			  </div>}
 		  </div>
-		  <Divider className={styles.hr}/>
+		  <Divider className={cn(styles.hr, styles.hr2)}/>
 		  <div className={styles.actions}>
 			  <Button apperance='primary'>Узнать подробнее</Button>
 			  <Button apperance='ghost' arrow={'right'} className={styles.reviewbutton}>Читать отзывы</Button>
