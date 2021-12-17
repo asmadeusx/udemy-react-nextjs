@@ -1,0 +1,48 @@
+/* stylelint-disable color-function-notation */
+/* stylelint-disable length-zero-no-unit */
+.reviews {
+	display: grid;
+	grid-template-columns: [start] auto 1fr auto auto [end];
+	gap: 10px;
+
+	align-items: center;
+
+	font-size: 14px;
+	line-height: 24px;
+}
+
+.description {
+	grid-column: start / end;
+}
+
+.date {
+	margin-right: 10px;
+}
+
+.name {
+	font-weight: bold;
+}
+
+@media screen and (max-width: 640px) {
+	.reviews {
+		grid-template-columns: [start] 30px [titlestart] auto [dateend] 1fr [end];
+	}
+
+	.title {
+		grid-column: titlestart / end;
+	}
+
+	.date {
+		grid-column: start / dateend;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.date {
+		grid-column: start / end;
+	}
+
+	.rating {
+		grid-column: start / end;
+	}
+}
