@@ -4,7 +4,7 @@ import { GetStaticProps } from 'next';
 import axios from 'axios';
 import { MenuItem } from '../interfaces/menu.interface';
 
-function Search(): JSX.Element {
+export const Search = (): JSX.Element => {
   return (
     <Fragment>
       Search Page      

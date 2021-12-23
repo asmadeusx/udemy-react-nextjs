@@ -9,7 +9,7 @@ import { ParsedUrlQuery } from 'node:querystring';
 import { firstLevelMenu } from '../../helpers/helpers';
 import { TopPageComponent } from '../../page-components/';
 
-function TopPage({ firstCategory, page, products }: TopPageProps): JSX.Element {
+export const TopPage = ({ firstCategory, page, products }: TopPageProps): JSX.Element => {
   return <TopPageComponent 
   		firstCategory={firstCategory}
 	  	page={page}

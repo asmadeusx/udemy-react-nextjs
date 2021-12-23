@@ -4,7 +4,7 @@ import styles from "./Button.module.css";
 import cn from "classnames";
 import ArrowIcon from "./arrow.svg";
 
-function Button({ children, apperance, arrow = 'none', className, ...props }: ButtonProps): JSX.Element {
+export const Button = ({ children, apperance, arrow = 'none', className, ...props }: ButtonProps): JSX.Element => {
   return (
     <Fragment>
       <button className={cn(styles.button, className, {
@@ -21,5 +21,3 @@ function Button({ children, apperance, arrow = 'none', className, ...props }: Bu
     </Fragment>
   );
 }
-
-export default Button;

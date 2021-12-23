@@ -2,15 +2,15 @@ import React, { Fragment as form } from "react";
 import { ReviewFormProps } from "./ReviewForm.props";
 import styles from "./ReviewForm.module.css";
 import cn from "classnames";
-import Input from '../Input/Input';
-import Rating from '../Rating/Rating';
-import TextArea from '../TextArea/TextArea';
-import Button from '../Button/Button';
+import { Input } from '../Input/Input';
+import { Rating } from '../Rating/Rating';
+import { TextArea } from '../TextArea/TextArea';
+import { Button } from '../Button/Button';
 import CloseIcon from './close.svg';
 import { IReviewForm } from './ReviewForm.interface';
 import { useForm, Controller } from 'react-hook-form';
 
-function ReviewForm({ productId, className, ...props }: ReviewFormProps): JSX.Element {
+export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps): JSX.Element => {
   const { register, control, handleSubmit } = useForm<IReviewForm>();
 
   const onSubmit = (data: IReviewForm) => {
@@ -28,7 +28,7 @@ function ReviewForm({ productId, className, ...props }: ReviewFormProps): JSX.El
             control={control}
             name='rating'
             render={ ( { field } ) => (
-              <Rating isEditable rating={field.value} setRating={field.onChange}/>
+              <Rating isEditable rating={field.value} ref={field.ref} setRating={field.onChange}/>
             )}
           />
         </div>
@@ -47,4 +47,4 @@ function ReviewForm({ productId, className, ...props }: ReviewFormProps): JSX.El
   );
 }
 
-export default ReviewForm;
+ReviewForm.displayName = 'ReviewForm';

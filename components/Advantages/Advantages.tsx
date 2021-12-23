@@ -5,7 +5,7 @@ import cn from "classnames";
 import CheckIcon from './check.svg';
 
 
-function Advantages({ advantages, ...props }: AdvantagesProps): JSX.Element {
+export const Advantages = ({ advantages, ...props }: AdvantagesProps): JSX.Element => {
   return (
 	<Fragment>
 		{advantages.map(a => (
@@ -19,5 +19,3 @@ function Advantages({ advantages, ...props }: AdvantagesProps): JSX.Element {
 	</Fragment>
   	);
 }
-
-export default Advantages;

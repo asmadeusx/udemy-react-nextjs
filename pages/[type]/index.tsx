@@ -6,7 +6,7 @@ import { MenuItem } from '../../interfaces/menu.interface';
 import { firstLevelMenu } from '../../helpers/helpers';
 import { ParsedUrlQuery } from 'node:querystring';
 
-function Type({firstCategory}: TypeProps): JSX.Element {
+export const Type = ({firstCategory}: TypeProps): JSX.Element => {
   return (
     <Fragment>
       TYPE PAGE - Type: {firstCategory};

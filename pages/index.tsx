@@ -1,17 +1,17 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import Button from '../components/Button/Button';
-import Htag from '../components/Htag/Htag';
-import Paragraph from '../components/Paragraph/Paragraph';
-import Tag from '../components/Tag/Tag';
-import Rating from '../components/Rating/Rating';
+import { Button } from '../components/Button/Button';
+import { Htag } from '../components/Htag/Htag';
+import { Paragraph } from '../components/Paragraph/Paragraph';
+import { Tag } from '../components/Tag/Tag';
+import { Rating } from '../components/Rating/Rating';
 import { withLayout } from '../layout/Layout';
 import { GetStaticProps } from 'next';
 import axios from 'axios';
 import { MenuItem } from '../interfaces/menu.interface';
-import Input from '../components/Input/Input';
-import TextArea from '../components/TextArea/TextArea';
+import { Input } from '../components/Input/Input';
+import { TextArea } from '../components/TextArea/TextArea';
 
-function Home({ menu }: HomeProps): JSX.Element {
+export const Home = ({ menu }: HomeProps): JSX.Element => {
   const [counter, setCounter] = useState<number>(0);
 
   const [rating, setRating] = useState<number>(0);

@@ -8,7 +8,7 @@ import Link from "next/link";
 import { useRouter } from 'next/router';
 import { firstLevelMenu } from '../../helpers/helpers';
 
-function Menu(): JSX.Element {
+export const Menu = (): JSX.Element => {
   const { menu, setMenu, firstCategory } = useContext(AppContext);
   const router = useRouter();
 
@@ -87,5 +87,3 @@ function Menu(): JSX.Element {
 
   return <div className={styles.menu}>{buildFirstLevel()}</div>;
 }
-
-export default Menu;

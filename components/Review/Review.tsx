@@ -5,9 +5,9 @@ import cn from "classnames";
 import UserIcon from "./userlogo.svg";
 import { format } from "date-fns";
 import { ru } from "date-fns/locale";
-import Rating from '../Rating/Rating';
+import { Rating } from '../Rating/Rating';
 
-function Review({ review, className, ...props }: ReviewProps): JSX.Element {
+export const Review = ({ review, className, ...props }: ReviewProps): JSX.Element => {
   const { name, title, description, createdAt, rating } = review;
   return (
     <div className={cn(styles.reviews, className)} {...props}>
@@ -34,5 +34,3 @@ function Review({ review, className, ...props }: ReviewProps): JSX.Element {
     </div>
   );
 }
-
-export default Review;

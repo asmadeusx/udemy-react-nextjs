@@ -1,13 +1,17 @@
-import React, { Fragment } from "react";
+import React, { ForwardedRef, forwardRef, Fragment } from "react";
 import { TextAreaProps } from "./TextArea.props";
 import styles from "./TextArea.module.css";
 import cn from "classnames";
 
 
-function TextArea({ className, ...props }: TextAreaProps): JSX.Element {
+export const TextArea = forwardRef(({ className, ...props }: TextAreaProps, ref: ForwardedRef<HTMLTextAreaElement>): JSX.Element => {
   return (
-	  <textarea className={cn(className, styles.textarea)} {...props}></textarea>
-	)
-}
+	  <textarea 
+	  		className={cn(className, styles.textarea)}
+			ref={ref}
+			{...props}
+	/>
+	);
+});
 
-export default TextArea;
+TextArea.displayName = 'TextArea';

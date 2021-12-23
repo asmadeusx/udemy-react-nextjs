@@ -29,5 +29,3 @@ export const Sort = ({ sort, setSort, className, ...props }: SortProps): JSX.Ele
     </div>
   );
 }
-
-export default Sort;

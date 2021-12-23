@@ -3,7 +3,7 @@ import { AppProps } from "next/dist/shared/lib/router/router";
 import "../styles/globals.css";
 import React from "react";
 
-function MyApp({ Component, pageProps }: AppProps): JSX.Element {
+export const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   return (
     <React.Fragment>
       <Head>

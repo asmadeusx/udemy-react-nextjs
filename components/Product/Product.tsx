@@ -3,17 +3,17 @@ import React, { Fragment, useState } from "react";
 import { ProductProps } from "./Product.props";
 import styles from "./Product.module.css";
 import cn from "classnames";
-import Card from "../Card/Card";
-import Rating from "../Rating/Rating";
-import Tag from "../Tag/Tag";
-import Button from "../Button/Button";
+import { Card } from "../Card/Card";
+import { Rating } from "../Rating/Rating";
+import { Tag } from "../Tag/Tag";
+import { Button } from "../Button/Button";
 import { declOfNum, priceRu } from "../../helpers/helpers";
-import Divider from "../Divider/Divider";
+import { Divider } from "../Divider/Divider";
 import Image from "next/image";
-import Review from '../Review/Review';
-import ReviewForm from '../ReviewForm/ReviewForm';
+import { Review } from '../Review/Review';
+import { ReviewForm } from '../ReviewForm/ReviewForm';
 
-function Product({ product, children, ...props }: ProductProps): JSX.Element {
+export const Product = ({ product, children, ...props }: ProductProps): JSX.Element => {
   const [isReviewOpened, setIsReviewOpened] = useState<boolean>(false);
 
   return (
@@ -114,5 +114,3 @@ function Product({ product, children, ...props }: ProductProps): JSX.Element {
     </Fragment>
   );
 }
-
-export default Product;

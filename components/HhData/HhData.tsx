@@ -2,12 +2,12 @@ import React, { Fragment } from "react";
 import { HhDataProps } from "./HhData.props";
 import styles from "./HhData.module.css";
 import cn from "classnames";
-import Card from '../Card/Card';
+import { Card } from '../Card/Card';
 import RateIcon from './rate.svg';
 import { priceRu } from '../../helpers/helpers';
 
 
-function HhData({ count, juniorSalary, middleSalary, seniorSalary, ...props }: HhDataProps): JSX.Element {
+export const HhData = ({ count, juniorSalary, middleSalary, seniorSalary, ...props }: HhDataProps): JSX.Element => {
   return (
 	<div className={styles.hh}>
 		<Card className={styles.count}>
@@ -46,5 +46,3 @@ function HhData({ count, juniorSalary, middleSalary, seniorSalary, ...props }: H
 	</div>
   	);
 }
-
-export default HhData;

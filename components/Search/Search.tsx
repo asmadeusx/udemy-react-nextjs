@@ -2,13 +2,13 @@ import React, { Fragment, useState } from "react";
 import { SearchProps } from "./Search.props";
 import styles from "./Search.module.css";
 import cn from "classnames";
-import Input from '../Input/Input';
-import Button from '../Button/Button';
+import { Input } from '../Input/Input';
+import { Button } from '../Button/Button';
 import GlassIcon from './glass.svg';
 import { useRouter } from 'next/router';
 
 
-function Search({ className, ...props }: SearchProps): JSX.Element {
+export const Search = ({ className, ...props }: SearchProps): JSX.Element => {
 	const [search, setSearch] = useState<string>('');
 	const router = useRouter();
 
@@ -46,5 +46,3 @@ function Search({ className, ...props }: SearchProps): JSX.Element {
 	  </div>
   	)
 }
-
-export default Search;
