@@ -1,5 +1,9 @@
 /* stylelint-disable color-function-notation */
 /* stylelint-disable length-zero-no-unit */
+.inputwrapper {
+	position: relative;
+}
+
 .input {
 	padding: 7px 15px;
 
@@ -21,4 +25,16 @@
 
 .input::placeholder {
 	color: var(--grey);
+}
+
+.error {
+	border: 1px solid var(--red);
+}
+
+.errormessage {
+	position: absolute;
+	bottom: -20px;
+	left: 0;
+
+	color: var(--red);
 }

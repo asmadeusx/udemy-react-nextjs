@@ -11,7 +11,7 @@ import { IReviewForm } from './ReviewForm.interface';
 import { useForm, Controller } from 'react-hook-form';
 
 export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps): JSX.Element => {
-  const { register, control, handleSubmit } = useForm<IReviewForm>();
+  const { register, control, handleSubmit, formState: { errors } } = useForm<IReviewForm>();
 
   const onSubmit = (data: IReviewForm) => {
     console.log(data);
@@ -20,8 +20,18 @@ export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps):
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className={cn(styles.reviewform, className)} {...props}>
-        <Input {...register('name')} placeholder='Имя' className={styles.inputname}/>
-        <Input {...register('title')} placeholder='Заголовок отзыва' className={styles.inputtitle}/>
+        <Input 
+            {...register('name', { required: { value: true, message: 'Заполните имя' }})}
+            placeholder='Имя'
+            className={styles.inputname}
+            error={errors.name}
+        />
+        <Input 
+            {...register('title', { required: { value: true, message: 'Заполните заголовок' }})}
+            placeholder='Заголовок отзыва'
+            className={styles.inputtitle}
+            error={errors.title}
+        />
         <div className={styles.rating}>
           <span>Оценка:</span>
           <Controller
@@ -32,7 +42,12 @@ export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps):
             )}
           />
         </div>
-        <TextArea {...register('description')} placeholder='Текст отзыва' className={styles.description}/>
+        <TextArea 
+            {...register('description', { required: { value: true, message: 'Заполните текст отзыва' }})} 
+            placeholder='Текст отзыва' 
+            className={styles.description}
+            error={errors.description}
+        />
         <div className={styles.submit}>
           <Button apperance='primary'>Отправить</Button>
           <span className={styles.info}>* перед публикацией отзыв пройдет предварительную модерацию и проверку</span>

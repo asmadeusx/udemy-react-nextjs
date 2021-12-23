@@ -1,6 +1,12 @@
 /* stylelint-disable color-function-notation */
 /* stylelint-disable length-zero-no-unit */
+.textareawrapper {
+	position: relative;
+}
+
 .textarea {
+	width: 100%;
+
 	padding: 7px 15px;
 
 	color: var(--black);
@@ -21,4 +27,16 @@
 
 .textarea::placeholder {
 	color: var(--grey);
+}
+
+.error {
+	border: 1px solid var(--red);
+}
+
+.errormessage {
+	position: absolute;
+	bottom: -15px;
+	left: 0;
+
+	color: var(--red);
 }

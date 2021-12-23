@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { Fragment, useEffect, useState, KeyboardEvent, forwardRef, ForwardedRef } from "react";
 import { RatingProps } from "./Rating.props";
 import styles from "./Rating.module.css";
