@@ -39,6 +39,10 @@
 	white-space: nowrap;
 }
 
+.ratingtitle a {
+	color: var(--primary);
+}
+
 .hr,
 .description,
 .actions {

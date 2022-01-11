@@ -30,7 +30,8 @@ export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps):
       }
     } 
     
-    catch ( e ) {
+    // e (event) поставлен тип ANY просто чтобы убрать ошибку линтера. 
+    catch ( e:any ) {
       setError(e.message);
     }
     

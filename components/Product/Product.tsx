@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useRef, useState } from "react";
 import { ProductProps } from "./Product.props";
 import styles from "./Product.module.css";
 import cn from "classnames";
@@ -13,11 +13,21 @@ import Image from "next/image";
 import { Review } from '../Review/Review';
 import { ReviewForm } from '../ReviewForm/ReviewForm';
 
-export const Product = ({ product, children, ...props }: ProductProps): JSX.Element => {
+export const Product = ({ product, className, ...props }: ProductProps): JSX.Element => {
   const [isReviewOpened, setIsReviewOpened] = useState<boolean>(false);
+  const reviewRef = useRef<HTMLDivElement>(null);
+
+  const scrollToReview = () => {
+    setIsReviewOpened(true);
+    reviewRef.current?.scrollIntoView( { 
+      behavior: 'smooth',
+      block: 'start'
+    } );
+
+  };
 
   return (
-    <Fragment>
+    <div className={className} {...props}>
       <Card className={styles.product}>
         <div className={styles.logo}>
           <Image
@@ -53,8 +63,13 @@ export const Product = ({ product, children, ...props }: ProductProps): JSX.Elem
         <div className={styles.pricetitle}>цена</div>
         <div className={styles.credittitle}>в кредит</div>
         <div className={styles.ratingtitle}>
-          {product.reviewCount}{" "}
-          {declOfNum(product.reviewCount, ["отзыв", "отзыва", "отзывов"])}
+          <a 
+            href='#ref'
+            onClick={scrollToReview}
+          >
+            {product.reviewCount}
+            {declOfNum(product.reviewCount, [" отзыв", " отзыва", " отзывов"])}
+          </a>
         </div>
         <Divider className={styles.hr} />
         <div className={styles.description}>{product.description}</div>
@@ -100,6 +115,7 @@ export const Product = ({ product, children, ...props }: ProductProps): JSX.Elem
           [styles.opened]: isReviewOpened,
           [styles.closed]: !isReviewOpened,
         })}
+        ref={reviewRef}
       >
 		  <div>
 			  {product.reviews.map((r) => (
@@ -111,6 +127,6 @@ export const Product = ({ product, children, ...props }: ProductProps): JSX.Elem
         <ReviewForm productId={product._id}/>
 		  </div>
 	  </Card>
-    </Fragment>
+    </div>
   );
 }
