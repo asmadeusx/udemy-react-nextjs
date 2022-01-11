@@ -4,7 +4,7 @@
 
 	min-height: 100vh;
 
-	grid-template-columns: auto 230px minmax(320px, 1200px) auto;
+	grid-template-columns: auto 245px minmax(320px, 1200px) auto;
 	grid-template-rows: auto 1fr auto;
 	grid-template-areas:
 		". header header ."
