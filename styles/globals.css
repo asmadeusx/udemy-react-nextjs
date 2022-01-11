@@ -1,3 +1,4 @@
+/* stylelint-disable color-hex-length */
 html,
 body {
 	margin: 0;
@@ -25,7 +26,8 @@ a {
 	--white: white;
 	--primary: #562CFF;
 	--primary-hover: #583CC5;
-	--red: #FC836D;
+	--red: #FF2222;
+	--red-light: #FEA291;
 	--green: #1DC37E;
 	--green-light: #C8F8E4;
 	--font-family: "Noto Sans", sans-serif;
