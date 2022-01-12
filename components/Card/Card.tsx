@@ -18,4 +18,4 @@ export const Card = forwardRef(({ color = 'white', children, className, ...props
   	);
 });
 
-Card.displayName = 'Card'
+Card.displayName = 'Card';

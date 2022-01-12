@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import React, { ForwardedRef, forwardRef, Fragment, useRef, useState } from "react";
 import { ProductProps } from "./Product.props";
 import styles from "./Product.module.css";
@@ -20,11 +19,12 @@ export const Product = motion(forwardRef(({ product, className, ...props }: Prod
 
   const scrollToReview = () => {
     setIsReviewOpened(true);
-    reviewRef.current?.scrollIntoView( { 
-      behavior: 'smooth',
-      block: 'start'
-    } );
-
+    reviewRef.current?.scrollIntoView( 
+      { 
+        behavior: 'smooth',
+        block: 'start'
+      }
+    );
   };
 
   return (
@@ -104,7 +104,7 @@ export const Product = motion(forwardRef(({ product, className, ...props }: Prod
             apperance="ghost"
             arrow={isReviewOpened ? 'down' : 'right'}
             className={styles.reviewbutton}
-			onClick={() => setIsReviewOpened(!isReviewOpened)}
+			      onClick={() => setIsReviewOpened(!isReviewOpened)}
           >
             Читать отзывы
           </Button>
@@ -127,7 +127,7 @@ export const Product = motion(forwardRef(({ product, className, ...props }: Prod
         ))}
         <ReviewForm productId={product._id}/>
 		  </div>
-	  </Card>
+	    </Card>
     </div>
   );
 
