@@ -33,6 +33,7 @@ export const Up = (): JSX.Element => {
           apperance='primary'
           icon='up'
           onClick={scrollToTop}
+          aria-label='up button'
       />
     </motion.div>
   );
