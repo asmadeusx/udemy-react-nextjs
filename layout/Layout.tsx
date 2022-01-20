@@ -1,4 +1,4 @@
-import React, { Fragment, FunctionComponent } from "react";
+import React, { Fragment, FunctionComponent, useState, useRef } from "react";
 import { LayoutProps } from "./Layout.props";
 import styles from "./Layout.module.css";
 import cn from "classnames";
@@ -10,15 +10,34 @@ import { Up } from '../components';
 
 
 const Layout = ({ children }: LayoutProps): JSX.Element => {
-  return (
+	const [isSkipLinkDisplayed, setIsSkipLinkDisplayed] = useState<boolean>(false);
+	const bodyRef = useRef<HTMLDivElement>(null);
+
+	const skipContentAction = (key: KeyboardEvent) => {
+		if (key.code == 'Space' || key.code == 'Enter') {
+			key.preventDefault();
+			bodyRef.current?.focus();
+		}
+		setIsSkipLinkDisplayed(false);
+	};
+
+  	return (
 	  <div className={styles.wrapper}>
-		  	<Header className={styles.header}/>
-			<SideBar className={styles.sidebar}/>
-			<div className={styles.body}>
-				{children}
-			</div>
-		  	<Footer className={styles.footer}/>
-			<Up/>
+		<a
+			onFocus={() => setIsSkipLinkDisplayed(true)} 
+			tabIndex={1} 
+			className={cn(styles.skiplink, {
+				[styles.displayed]:  isSkipLinkDisplayed,
+			})}
+			onKeyDown={skipContentAction}
+		>Сразу к содержанию</a>
+		<Header className={styles.header}/>
+		<SideBar className={styles.sidebar}/>
+		<div className={styles.body} ref={bodyRef} tabIndex={0}>
+			{children}
+		</div>
+		<Footer className={styles.footer}/>
+		<Up/>
 	  </div>
   );
 }
