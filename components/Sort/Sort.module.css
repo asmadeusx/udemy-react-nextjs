@@ -2,6 +2,10 @@
 	display: none;
 }
 
+.sortname {
+	display: none;
+}
+
 .active {
 	color: var(--primary);
 

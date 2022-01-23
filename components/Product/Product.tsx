@@ -47,18 +47,20 @@ export const Product = motion(forwardRef(({ product, className, ...props }: Prod
         </div>
         <div className={styles.title}>{product.title}</div>
         <div className={styles.price}>
-          {priceRu(product.price)}
+          <span><span className='visualyhidden'>Цена</span>{priceRu(product.price)}</span>
           {product.oldPrice && (
             <Tag className={styles.oldprice} color="green" size="m">
+              <span className='visualyhidden'>Скидка</span>
               {priceRu(product.price - product.oldPrice)}
             </Tag>
           )}
         </div>
         <div className={styles.credit}>
-          {priceRu(product.credit)}
+        <span className='visualyhidden'>В Кредит</span>{priceRu(product.credit)}
           <span className={styles.month}>/мес</span>
         </div>
         <div className={styles.rating}>
+          <span className='visualyhidden'>{'рейтинг' + (product.reviewAvg ?? product.initialRating)}</span>
           <Rating rating={product.reviewAvg ?? product.initialRating} />
         </div>
         <div className={styles.tags}>
@@ -68,8 +70,8 @@ export const Product = motion(forwardRef(({ product, className, ...props }: Prod
             </Tag>
           ))}
         </div>
-        <div className={styles.pricetitle}>цена</div>
-        <div className={styles.credittitle}>в кредит</div>
+        <div className={styles.pricetitle} aria-hidden={true}>цена</div>
+        <div className={styles.credittitle} aria-hidden={true}>в кредит</div>
         <div className={styles.ratingtitle}>
           <a 
             href='#ref'

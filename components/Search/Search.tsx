@@ -40,7 +40,7 @@ export const Search = ({ className, ...props }: SearchProps): JSX.Element => {
 		  		apperance='primary'
 		  		className={styles.button}
 				onClick={goToSearch}
-				aria-label='Search Button'
+				aria-label='Искать по сайту'
 		  >
 			  <GlassIcon className={styles.glassicon}/>
 		  </Button>
