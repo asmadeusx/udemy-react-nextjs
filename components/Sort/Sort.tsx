@@ -8,23 +8,23 @@ export const Sort = ({ sort, setSort, className, ...props }: SortProps): JSX.Ele
   return (
     <div className={cn(styles.sort, className)} {...props}>
       
-      <span
+      <button
         onClick={() => setSort(SortEnum.Rating)}
         className={cn({
           [styles.active]: sort == SortEnum.Rating
         })}
       >
         <SortIcon className={styles.sorticon}/>По Рейтингу
-      </span>
+      </button>
       
-      <span
+      <button
         onClick={() => setSort(SortEnum.Price)}
         className={cn({
           [styles.active]: sort == SortEnum.Price
         })}
       >
         <SortIcon className={styles.sorticon}/>По Цене
-      </span>
+      </button>
 
     </div>
   );
