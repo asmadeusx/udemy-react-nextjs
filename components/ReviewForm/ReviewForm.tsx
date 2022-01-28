@@ -13,7 +13,7 @@ import axios from 'axios';
 import { API } from '../../helpers/api';
 
 export const ReviewForm = ({ productId, className, isOpened, ...props }: ReviewFormProps): JSX.Element => {
-  const { register, control, handleSubmit, formState: { errors }, reset } = useForm<IReviewForm>();
+  const { register, control, handleSubmit, formState: { errors }, reset, clearErrors } = useForm<IReviewForm>();
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
   const [error, setError] = useState<string>();
   const errorText = 'Что-то пошло не так'
@@ -46,6 +46,7 @@ export const ReviewForm = ({ productId, className, isOpened, ...props }: ReviewF
             className={styles.inputname}
             error={errors.name}
             tabIndex={isOpened ? 0 : -1}
+            aria-invalid={errors.name ? true : false}
         />
         <Input 
             {...register('title', { required: { value: true, message: 'Заполните заголовок' }})}
@@ -53,6 +54,7 @@ export const ReviewForm = ({ productId, className, isOpened, ...props }: ReviewF
             className={styles.inputtitle}
             error={errors.title}
             tabIndex={isOpened ? 0 : -1}
+            aria-invalid={errors.title ? true : false}
         />
         <div className={styles.rating}>
           <span>Оценка:</span>
@@ -78,9 +80,11 @@ export const ReviewForm = ({ productId, className, isOpened, ...props }: ReviewF
             className={styles.description}
             error={errors.description}
             tabIndex={isOpened ? 0 : -1}
+            aria-label='Текст отзыва'
+            aria-invalid={errors.description ? true : false}
         />
         <div className={styles.submit}>
-          <Button apperance='primary' tabIndex={isOpened ? 0 : -1} >Отправить</Button>
+          <Button apperance='primary' tabIndex={isOpened ? 0 : -1} onClick={ () => clearErrors }>Отправить</Button>
           <span className={styles.info}>* перед публикацией отзыв пройдет предварительную модерацию и проверку</span>
         </div>
       </div>
