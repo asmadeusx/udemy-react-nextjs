@@ -1,3 +1,7 @@
-.test {
-	color: red;
+.sidebar {
+	display: grid;
+
+	align-content: start;
+
+	gap: 20px;
 }

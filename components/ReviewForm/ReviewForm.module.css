@@ -1,0 +1,87 @@
+/* stylelint-disable color-function-notation */
+/* stylelint-disable length-zero-no-unit */
+.reviewform {
+	display: grid;
+	grid-template-columns: [start] auto 1fr auto [end];
+
+	gap: 20px 30px;
+
+	align-items: center;
+
+	font-size: 14px;
+	line-height: 24px;
+}
+
+.description,
+.submit {
+	grid-column: start / end;
+}
+
+.inputtitle {
+	justify-self: left;
+}
+
+.info {
+	margin-left: 15px;
+}
+
+.rating {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 20px;
+}
+
+.panel {
+	position: relative;
+
+	margin-top: 20px;
+
+	padding: 20px;
+
+	border-radius: 5px;
+}
+
+.success {
+	background: var(--green-light);
+}
+
+.error {
+	background: var(--red-light);
+}
+
+.error .closeicon path {
+	stroke: var(--red);
+}
+
+.successtitle {
+	font-weight: bold;
+}
+
+.closeicon {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+
+	border: none;
+	background: none;
+}
+
+@media screen and (max-width: 1100px) {
+	.reviewform {
+		grid-template-columns: [start] 1fr 1fr [end];
+	}
+
+	.rating {
+		grid-column: start / end;
+	}
+
+	.inputtitle {
+		justify-self: normal;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.reviewform {
+		grid-template-columns: [start] 1fr [end];
+	}
+}

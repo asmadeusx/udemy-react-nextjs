@@ -4,7 +4,7 @@ import styles from "./Paragraph.module.css";
 import cn from "classnames";
 
 
-function Paragraph({ children, size = "m", className, ...props }: ParagraphProps): JSX.Element {
+export const Paragraph = ({ children, size = "m", className, ...props }: ParagraphProps): JSX.Element => {
   return (
   	<p 
   		className={cn(styles.p, className, {
@@ -15,7 +15,5 @@ function Paragraph({ children, size = "m", className, ...props }: ParagraphProps
 		  {...props}
 	>
 		{children} 
-	</p>);
+	</p>)
 }
-
-export default Paragraph;

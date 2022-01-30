@@ -1,3 +1,4 @@
+/* stylelint-disable color-hex-length */
 html,
 body {
 	margin: 0;
@@ -17,14 +18,26 @@ a {
 	box-sizing: border-box;
 }
 
+.visualyhidden {
+	position: absolute;
+
+	overflow: hidden;
+
+	width: 0;
+	height: 0;
+}
+
 :root {
 	--black: #3B434E;
 	--grey-light: #EBEBEB;
+	--grey-dark: #6C7077;
+	--grey: #A4A4A4;
 	--white: white;
-	--primary: #7653FC;
-	--primary-hover: #6344DF;
-	--red: #FC836D;
-	--green: #1DC37E;
+	--primary: #562CFF;
+	--primary-hover: #583CC5;
+	--red: #FF2222;
+	--red-light: #FEA291;
+	--green: #127A4F;
 	--green-light: #C8F8E4;
 	--font-family: "Noto Sans", sans-serif;
 }

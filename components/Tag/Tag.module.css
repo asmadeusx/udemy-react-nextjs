@@ -35,7 +35,7 @@
 
 .grey {
 	color: var(--white);
-	background: #B3C0D9;
+	background: #4D4D4D;
 
 	font-weight: bold;
 }
@@ -50,7 +50,7 @@
 .primary {
 	color: var(--primary);
 
-	border: 1px solid var(--grey-light);
+	border: 1px solid var(--primary);
 
 	background: none;
 

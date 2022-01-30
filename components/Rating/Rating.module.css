@@ -2,10 +2,30 @@
 	fill: var(--primary);
 }
 
+.star {
+	display: inline-block;
+}
+
 .star svg {
 	margin-right: 5px;
 }
 
 .editable {
 	cursor: pointer;
+}
+
+.ratingwrapper {
+	position: relative;
+}
+
+.errormessage {
+	position: absolute;
+	bottom: -20px;
+	left: 0;
+
+	color: var(--red);
+}
+
+.error svg {
+	stroke: var(--red);
 }

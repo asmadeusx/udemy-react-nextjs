@@ -1,0 +1,47 @@
+.sorticon {
+	display: none;
+}
+
+.sortname {
+	display: none;
+}
+
+.active {
+	color: var(--primary);
+
+	font-weight: bold;
+}
+
+.active .sorticon {
+	display: block;
+
+	margin-right: 8px;
+}
+
+.sort {
+	display: inline-block;
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: 40px;
+
+	cursor: pointer;
+}
+
+.sort button {
+	display: grid;
+	grid-template-columns: 20px 1fr;
+	gap: 8px;
+
+	align-items: center;
+
+	border: none;
+
+	background: none;
+
+	font-size: 16px;
+	line-height: 22px;
+}
+
+.sort button:not(.active) {
+	grid-template-columns: 1fr;
+}

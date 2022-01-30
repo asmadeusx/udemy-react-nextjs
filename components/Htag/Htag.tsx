@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { HtagProps } from "./Htag.props";
 import styles from "./Htag.module.css";
 
-function Htag({ tag, children }: HtagProps): JSX.Element {
+export const  Htag = ({ tag, children }: HtagProps): JSX.Element => {
   switch (tag) {
     case 'h1':
       return <h1 className={styles.h1}>{children}</h1>;
@@ -14,5 +14,3 @@ function Htag({ tag, children }: HtagProps): JSX.Element {
       return <Fragment>{children}</Fragment>;
   }
 }
-
-export default Htag;
