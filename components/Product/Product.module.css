@@ -239,10 +239,6 @@
 		margin-bottom: 20px;
 	}
 
-	.advblock {
-		grid-area: advblock;
-	}
-
 	.hr2 {
 		grid-area: ratingtitle;
 	}
