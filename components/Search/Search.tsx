@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, KeyboardEvent, useState } from "react";
 import { SearchProps } from "./Search.props";
 import styles from "./Search.module.css";
 import cn from "classnames";

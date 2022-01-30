@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { ForwardedRef, forwardRef, Fragment, useRef, useState } from "react";
 import { ProductProps } from "./Product.props";
 import styles from "./Product.module.css";
@@ -39,7 +40,7 @@ export const Product = motion(forwardRef(({ product, className, ...props }: Prod
     <div className={className} {...props} ref={ref}>
       <Card className={styles.product}>
         <div className={styles.logo}>
-          <Image
+          <img
             src={process.env.NEXT_PUBLIC_DOMAIN + product.image}
             alt={product.title}
             width={70}

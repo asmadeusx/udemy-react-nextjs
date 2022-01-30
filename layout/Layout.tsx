@@ -1,4 +1,4 @@
-import React, { Fragment, FunctionComponent, useState, useRef } from "react";
+import React, { Fragment, KeyboardEvent, FunctionComponent, useState, useRef } from "react";
 import { LayoutProps } from "./Layout.props";
 import styles from "./Layout.module.css";
 import cn from "classnames";
