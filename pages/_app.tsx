@@ -11,8 +11,6 @@ export const MyApp = ({ Component, pageProps, router }: AppProps): JSX.Element =
       ym('hit', url);
     }
   });
-
-
   return (
     <React.Fragment>
       <Head>
