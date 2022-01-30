@@ -2,14 +2,14 @@
   "name": "udemy-react-nextjs",
   "private": true,
   "scripts": {
-    "prepare": "husky install",
     "dev": "next dev",
     "dev2": "cross-env NODE_OPTIONS='--max_old_space_size=4096' next dev",
     "debug": "cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "stylelint": "stylelint \"**/*.css\" --fix"
+    "stylelint": "stylelint \"**/*.css\" --fix",
+    "prepare": "husky install"
   },
   "dependencies": {
     "axios": "^0.24.0",

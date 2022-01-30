@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-page-custom-font */
 import Head from "next/head";
 import { AppProps } from "next/dist/shared/lib/router/router";
 import "../styles/globals.css";
@@ -11,6 +12,7 @@ export const MyApp = ({ Component, pageProps, router }: AppProps): JSX.Element =
       ym('hit', url);
     }
   });
+  
   return (
     <React.Fragment>
       <Head>
